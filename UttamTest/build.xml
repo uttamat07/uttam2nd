@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="AntBuild" default="Junit" basedir=".">
+
+	<!-- set global properties for this build -->
+	<property name="src.dir" location="./src"/>
+	<property name="testSrc.dir"  location="./test"/>
+	<property name="build.dir" location="./build/classes"/>
+	<property name="testBuild.dir" location="./build/tests"/>
+	<property name="lib.dir" location="./lib" />
+	<property name="report.dir" location="./report" />
+	
+	<!-- set classpath for compile -->
+	<path id="compile.classpath">
+		<fileset dir="${lib.dir}/">
+			<include name="*.jar"/>
+		</fileset>
+	</path>
+
+	<target name="clean">
+		<delete dir="${build.dir}" />
+		<delete dir="${testBuild.dir}" />
+		<delete dir="${report.dir}" />
+	</target>
+
+	<target name="init" depends="clean">
+		<mkdir dir="${build.dir}"/>
+		<mkdir dir="${testBuild.dir}" />
+		<mkdir dir="${report.dir}" />
+	</target>
+
+	<target name="compile" depends="init">
+		<echo message="Using Java version ${ant.java.version}." />
+		<echo message="Compiled class version 1.7." />
+		<javac destdir="${build.dir}" debug="true" srcdir="${src.dir}" source="1.7" target="1.7">
+			<classpath refid="compile.classpath" />
+		</javac>
+	</target>
+
+	<target name="compile-tests" depends="compile" description="compiling Junit tests">
+		<javac destdir="${testBuild.dir}" debug="true" srcdir="${testSrc.dir}" source="1.7" target="1.7">
+			<classpath refid="compile.classpath"/>
+			<classpath>
+				<pathelement location="${build.dir}"/>
+			</classpath>
+		</javac>
+	</target>
+	
+	<target name="Junit" depends="compile-tests">
+		<taskdef name="junit" classname="org.apache.tools.ant.taskdefs.optional.junit.JUnitTask">
+			<classpath path="./lib/junit.jar" />
+		</taskdef>
+		<junit fork="yes" forkmode="once" printsummary="withOutAndErr" haltonfailure="yes" failureproperty="JUnit.test.failed" showoutput="on" enabletestlistenerevents="true">
+			<classpath refid="compile.classpath"/>
+			<classpath>
+				<pathelement location="${build.dir}"/>
+				<pathelement location="${testBuild.dir}"/>
+			</classpath>
+
+			<formatter type="xml" />
+			<batchtest todir="${report.dir}">
+			    <fileset dir="${testBuild.dir}">   
+			    	<include name="**/FirstJunitTest.class" />
+			    </fileset>
+			</batchtest>
+		</junit>
+		<!--junitreport todir="${report.dir}">
+			<fileset dir="${report.dir}">
+				<include name="*.xml" />
+			</fileset>
+			<report format="noframes" todir="${report.dir}/html"/>
+		</junitreport-->
+	</target>
+</project>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite errors="0" failures="0" hostname="ADMINIB-ILT0EAD" name="com.ibm.uttamtest.servicetest.FirstJunitTest" skipped="0" tests="1" time="0.163" timestamp="2017-04-26T16:58:03">
+  <properties>
+    <property name="java.vendor" value="IBM Corporation" />
+    <property name="lib.dir" value="C:\workspace_Deal_Reg_Head_2.13_30_3_2017\UttamTest\lib" />
+    <property name="sun.java.launcher" value="SUN_STANDARD" />
+    <property name="testSrc.dir" value="C:\workspace_Deal_Reg_Head_2.13_30_3_2017\UttamTest\test" />
+    <property name="os.name" value="Windows 7" />
+    <property name="sun.boot.class.path" value="C:\Program Files\IBM\SDP\jdk\jre\lib\endorsed\jaxws-api.jar;C:\Program Files\IBM\SDP\jdk\jre\lib\endorsed\jaxb-api.jar;C:\Program Files\IBM\SDP\jdk\jre\lib\endorsed\javax.j2ee.annotation.jar;C:\Program Files\IBM\SDP\jdk\jre\bin\compressedrefs\jclSC170\vm.jar;C:\Program Files\IBM\SDP\jdk\jre\lib\se-service.jar;C:\Program Files\IBM\SDP\jdk\jre\lib\math.jar;C:\Program Files\IBM\SDP\jdk\jre\lib\jlm.jar;C:\Program Files\IBM\SDP\jdk\jre\lib\ibmorb.jar;C:\Program Files\IBM\SDP\jdk\jre\lib\ibmorbapi.jar;C:\Program Files\IBM\SDP\jdk\jre\lib\ibmcfw.jar;C:\Program Files\IBM\SDP\jdk\jre\lib\ibmpkcs.jar;C:\Program Files\IBM\SDP\jdk\jre\lib\ibmcertpathfw.jar;C:\Program Files\IBM\SDP\jdk\jre\lib\ibmjgssfw.jar;C:\Program Files\IBM\SDP\jdk\jre\lib\ibmjssefw.jar;C:\Program Files\IBM\SDP\jdk\jre\lib\ibmsaslfw.jar;C:\Program Files\IBM\SDP\jdk\jre\lib\ibmjcefw.jar;C:\Program Files\IBM\SDP\jdk\jre\lib\ibmjgssprovider.jar;C:\Program Files\IBM\SDP\jdk\jre\lib\ibmjsseprovider2.jar;C:\Program Files\IBM\SDP\jdk\jre\lib\ibmcertpathprovider.jar;C:\Program Files\IBM\SDP\jdk\jre\lib\xmldsigfw.jar;C:\Program Files\IBM\SDP\jdk\jre\lib\xml.jar;C:\Program Files\IBM\SDP\jdk\jre\lib\charsets.jar;C:\Program Files\IBM\SDP\jdk\jre\lib\resources.jar;C:\Program Files\IBM\SDP\jdk\jre\lib\rt.jar" />
+    <property name="sun.desktop" value="windows" />
+    <property name="java.vm.specification.vendor" value="Sun Microsystems Inc." />
+    <property name="ant.home" value="C:\apache-ant-1.9.9\bin\.." />
+    <property name="java.runtime.version" value="pwa6470sr6fp1ifx-20140317_01 (SR6 FP1+IX90136+IX90137+IV39749)" />
+    <property name="testBuild.dir" value="C:\workspace_Deal_Reg_Head_2.13_30_3_2017\UttamTest\build\tests" />
+    <property name="user.name" value="sanchari" />
+    <property name="java.compiler" value="j9jit26" />
+    <property name="os.encoding" value="UTF8" />
+    <property name="com.ibm.util.extralibs.properties" value="" />
+    <property name="build.dir" value="C:\workspace_Deal_Reg_Head_2.13_30_3_2017\UttamTest\build\classes" />
+    <property name="com.ibm.jcl.checkClassPath" value="" />
+    <property name="user.language" value="en" />
+    <property name="com.ibm.oti.vm.bootstrap.library.path" value="C:\Program Files\IBM\SDP\jdk\jre\bin\compressedrefs;C:\Program Files\IBM\SDP\jdk\jre\bin" />
+    <property name="sun.boot.library.path" value="C:\Program Files\IBM\SDP\jdk\jre\bin\compressedrefs;C:\Program Files\IBM\SDP\jdk\jre\bin" />
+    <property name="ant.file.type.AntBuild" value="file" />
+    <property name="ant.project.default-target" value="Junit" />
+    <property name="ant.project.name" value="AntBuild" />
+    <property name="java.version" value="1.7.0" />
+    <property name="user.timezone" value="" />
+    <property name="com.ibm.system.agent.path" value="C:\Program Files\IBM\SDP\jdk\jre\bin" />
+    <property name="sun.arch.data.model" value="64" />
+    <property name="com.ibm.zero.version" value="2" />
+    <property name="java.endorsed.dirs" value="C:\Program Files\IBM\SDP\jdk\jre\lib\endorsed" />
+    <property name="com.ibm.oti.vm.library.version" value="26" />
+    <property name="sun.jnu.encoding" value="Cp1252" />
+    <property name="file.encoding.pkg" value="sun.io" />
+    <property name="jxe.current.romimage.version" value="17" />
+    <property name="file.separator" value="\" />
+    <property name="java.specification.name" value="Java Platform API Specification" />
+    <property name="java.class.version" value="51.0" />
+    <property name="user.country" value="US" />
+    <property name="java.home" value="C:\Program Files\IBM\SDP\jdk\jre" />
+    <property name="java.vm.info" value="JRE 1.7.0 Windows 7 amd64-64 Compressed References 20140313_192258 (JIT enabled, AOT enabled)&#xa;J9VM - R26_Java726_SR6_20140313_1318_B192258&#xa;JIT  - r11.b05_20131003_47443.02&#xa;GC   - R26_Java726_SR6_20140313_1318_B192258_CMPRSS&#xa;J9CL - 20140313_192258" />
+    <property name="ant.file" value="C:\workspace_Deal_Reg_Head_2.13_30_3_2017\UttamTest\build.xml" />
+    <property name="os.version" value="6.1" />
+    <property name="path.separator" value=";" />
+    <property name="java.vm.version" value="2.6" />
+    <property name="report.dir" value="C:\workspace_Deal_Reg_Head_2.13_30_3_2017\UttamTest\report" />
+    <property name="user.variant" value="" />
+    <property name="ant.library.dir" value="C:\apache-ant-1.9.9\lib" />
+    <property name="console.encoding" value="Cp437" />
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob" />
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle" />
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit" />
+    <property name="ibm.signalhandling.sigint" value="true" />
+    <property name="user.home" value="C:\Users\IBM_ADMIN" />
+    <property name="com.ibm.cpu.endian" value="little" />
+    <property name="java.specification.vendor" value="Sun Microsystems Inc." />
+    <property name="ibm.signalhandling.sigchain" value="true" />
+    <property name="java.library.path" value="C:\Program Files\IBM\SDP\jdk\jre\bin\compressedrefs;C:\Program Files\IBM\SDP\jdk\jre\bin;C:\windows\system32;C:\windows;C:\windows\system32;C:\windows;C:\windows\system32\wbem;C:\windows\system32\windowspowershell\v1.0\;c:\program files\thinkpad\bluetooth software\;c:\program files\thinkpad\bluetooth software\syswow64;c:\program files\intel\wifi\bin\;c:\program files\common files\intel\wirelesscommon\;c:\program files (x86)\lenovo\access connections\;c:\program files (x86)\ibm\personal communications\;c:\program files (x86)\ibm\trace facility\;c:\program files (x86)\ibm\mobility client\;c:\program files\ibm\gsk8\lib64;C:\PROGRA~1\IBM\SQLLIB\BIN;C:\PROGRA~1\IBM\SQLLIB\FUNCTION;C:\PROGRA~1\IBM\SQLLIB\SAMPLES\REPL;C:\Program Files (x86)\Brackets\command;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files\IBM\SDP\jdk\bin;C:\apache-ant-1.9.9\bin;." />
+    <property name="java.vendor.url" value="http://www.ibm.com/" />
+    <property name="ant.file.AntBuild" value="C:\workspace_Deal_Reg_Head_2.13_30_3_2017\UttamTest\build.xml" />
+    <property name="java.vm.vendor" value="IBM Corporation" />
+    <property name="java.fullversion" value="JRE 1.7.0 IBM J9 2.6 Windows 7 amd64-64 Compressed References 20140313_192258 (JIT enabled, AOT enabled)&#xa;J9VM - R26_Java726_SR6_20140313_1318_B192258&#xa;JIT  - r11.b05_20131003_47443.02&#xa;GC   - R26_Java726_SR6_20140313_1318_B192258_CMPRSS&#xa;J9CL - 20140313_192258" />
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner com.ibm.uttamtest.servicetest.FirstJunitTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=true formatter=org.apache.tools.ant.taskdefs.optional.junit.OutErrSummaryJUnitResultFormatter showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\workspace_Deal_Reg_Head_2.13_30_3_2017\UttamTest\report\TEST-com.ibm.uttamtest.servicetest.FirstJunitTest.xml crashfile=C:\workspace_Deal_Reg_Head_2.13_30_3_2017\UttamTest\junitvmwatcher8704248938912442085.properties propsfile=C:\workspace_Deal_Reg_Head_2.13_30_3_2017\UttamTest\junit8574039532062284909.properties" />
+    <property name="java.class.path" value="C:\workspace_Deal_Reg_Head_2.13_30_3_2017\UttamTest\lib\junit.jar;C:\workspace_Deal_Reg_Head_2.13_30_3_2017\UttamTest\lib\org.hamcrest.core.jar;C:\workspace_Deal_Reg_Head_2.13_30_3_2017\UttamTest\build\classes;C:\workspace_Deal_Reg_Head_2.13_30_3_2017\UttamTest\build\tests;C:\workspace_Deal_Reg_Head_2.13_30_3_2017\UttamTest;C:\PROGRA~1\IBM\SQLLIB\java\db2java.zip;C:\PROGRA~1\IBM\SQLLIB\java\db2jcc.jar;C:\PROGRA~1\IBM\SQLLIB\java\sqlj.zip;C:\PROGRA~1\IBM\SQLLIB\java\db2jcc_license_cu.jar;C:\PROGRA~1\IBM\SQLLIB\bin;C:\PROGRA~1\IBM\SQLLIB\java\common.jar;C:\Program Files\IBM\SDP\jdk\bin;C:\apache-ant-1.9.9\lib\ant-launcher.jar;C:\apache-ant-1.9.9\lib\ant.jar;C:\apache-ant-1.9.9\lib\ant-junit.jar;C:\apache-ant-1.9.9\lib\ant-junit4.jar" />
+    <property name="ant.version" value="Apache Ant(TM) version 1.9.9 compiled on February 2 2017" />
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
+    <property name="ant.file.type" value="file" />
+    <property name="java.vm.specification.version" value="1.0" />
+    <property name="sun.cpu.endian" value="little" />
+    <property name="java.io.tmpdir" value="C:\Users\IBM_AD~1\AppData\Local\Temp\" />
+    <property name="ibm.system.encoding" value="Cp1252" />
+    <property name="ibm.signalhandling.rs" value="false" />
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment" />
+    <property name="os.arch" value="amd64" />
+    <property name="java.ext.dirs" value="C:\Program Files\IBM\SDP\jdk\jre\lib\ext" />
+    <property name="user.dir" value="C:\workspace_Deal_Reg_Head_2.13_30_3_2017\UttamTest" />
+    <property name="line.separator" value="&#xd;&#xa;" />
+    <property name="java.vm.name" value="IBM J9 VM" />
+    <property name="com.ibm.oti.shared.enabled" value="false" />
+    <property name="com.ibm.vm.bitmode" value="64" />
+    <property name="basedir" value="C:\workspace_Deal_Reg_Head_2.13_30_3_2017\UttamTest" />
+    <property name="ant.java.version" value="1.7" />
+    <property name="ant.core.lib" value="C:\apache-ant-1.9.9\lib\ant.jar" />
+    <property name="jxe.lowest.romimage.version" value="17" />
+    <property name="file.encoding" value="Cp1252" />
+    <property name="com.ibm.oti.configuration" value="scar" />
+    <property name="java.specification.version" value="1.7" />
+    <property name="com.ibm.oti.jcl.build" value="20140313_192258" />
+    <property name="src.dir" value="C:\workspace_Deal_Reg_Head_2.13_30_3_2017\UttamTest\src" />
+    <property name="ant.project.invoked-targets" value="Junit" />
+  </properties>
+  <testcase classname="com.ibm.uttamtest.servicetest.FirstJunitTest" name="testPrintMessage" time="0.001" />
+  <system-out><![CDATA[message....My first junit test
+test success
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
