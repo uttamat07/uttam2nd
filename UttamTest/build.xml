@@ -59,7 +59,7 @@
 			<formatter type="xml" />
 			<batchtest todir="${report.dir}">
 			    <fileset dir="${testBuild.dir}">   
-			    	<include name="**/FirstJunitTest.class" />
+			    	<include name="**/*Test.class" />
 			    </fileset>
 			</batchtest>
 		</junit>
