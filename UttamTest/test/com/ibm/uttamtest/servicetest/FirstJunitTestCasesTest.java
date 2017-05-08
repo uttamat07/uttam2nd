@@ -21,6 +21,7 @@ public class FirstJunitTestCasesTest {
 		//assertEquals("uttam", tc.getName());
 		assertEquals("uttam", tc.getName());
 		assertEquals("uttam1", tc.getName());
+		System.out.println("failre ");
 	}
 	@Test
 	public void test_listTest(){
@@ -29,6 +30,7 @@ public class FirstJunitTestCasesTest {
 		ls.add("uttam");
 		ls.add("subrata");
 		assertEquals(ls, ltc.listTest());
+		System.out.println("sucessfull first test cases.");
 		
 		
 	}
