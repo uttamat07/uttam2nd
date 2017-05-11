@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="AntBuild" default="war" basedir=".">
+
+	<!-- set global properties for this build -->
+	<property name="project.dir" value="./WebdynamicTest"/>
+	<property name="src.dir" location="${project.dir}/src"/>
+	<property name="testSrc.dir"  location="${project.dir}/test"/>
+	<property name="build.dir" location="./build/classes"/>
+	<property name="testBuild.dir" location="./build/tests"/>
+	<property name="lib.dir" location="${project.dir}/lib" />
+	<property name="report.dir" location="${project.dir}/report" />
+	<property name="web.dir" location="${project.dir}/WebContent" />	
+	<property name="dist.dir" location="./dist" />
+	
+	<!-- set classpath for compile -->
+	<path id="compile.classpath">
+		<fileset dir="${lib.dir}/">
+			<include name="*.jar"/>
+		</fileset>
+	</path>
+
+	<target name="clean">
+		<delete dir="${build.dir}" />
+		<delete dir="${testBuild.dir}" />
+		<delete dir="${report.dir}" />
+		<delete dir="${dist.dir}"/>
+	</target>
+
+	<target name="init" depends="clean">
+		<mkdir dir="${build.dir}"/>
+		<mkdir dir="${testBuild.dir}" />
+		<mkdir dir="${report.dir}" />
+		<mkdir dir="${dist.dir}"/>
+	</target>
+
+	<target name="compile" depends="init">
+		<echo message="Using Java version ${ant.java.version}." />
+		<echo message="Compiled class version 1.7." />
+		<javac destdir="${build.dir}" debug="true" srcdir="${src.dir}" source="1.7" target="1.7">
+			<!-- <classpath path="./lib/javax.servlet-api-3.0.1.jar"/> -->
+			<classpath refid="compile.classpath" />
+		</javac>
+	</target>
+
+	
+	
+	<target name="junit" depends="compile">
+		<taskdef name="junit" classname="org.apache.tools.ant.taskdefs.optional.junit.JUnitTask">
+			<classpath path="${lib.dir}/junit.jar" />
+		</taskdef>
+		<junit fork="yes" forkmode="once" printsummary="withOutAndErr" haltonfailure="yes" failureproperty="JUnit.test.failed" showoutput="on" enabletestlistenerevents="true">
+			<classpath refid="compile.classpath"/>
+			<classpath>
+				<pathelement location="${build.dir}"/>
+				<pathelement location="${testBuild.dir}"/>
+			</classpath>
+
+			<formatter type="xml" />
+			<batchtest todir="${report.dir}">
+			    <fileset dir="${testBuild.dir}">   
+			    	<include name="**/*Test.class" />
+			    </fileset>
+			</batchtest>
+		</junit>
+		<!--junitreport todir="${report.dir}">
+			<fileset dir="${report.dir}">
+				<include name="*.xml" />
+			</fileset>
+			<report format="noframes" todir="${report.dir}/html"/>
+		</junitreport-->
+	</target>
+	<target name="war" depends="junit" description="create war file">
+		<war destfile="${dist.dir}/WebdynamicTest.war" webxml="${web.dir}/WEB-INF/web.xml">
+			<lib dir="${web.dir}/WEB-INF/lib"/>
+		</war>	
+	</target>
+</project>
