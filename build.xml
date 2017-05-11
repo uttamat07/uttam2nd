@@ -71,7 +71,7 @@
 	</target>
 	<target name="war" depends="junit" description="create war file">
 		<war destfile="${dist.dir}/WebdynamicTest.war" webxml="${web.dir}/WEB-INF/web.xml">
-			<lib dir="${web.dir}/WEB-INF/lib"/>
+			<!-- <lib dir="${web.dir}/WEB-INF/lib"/> -->
 		</war>	
 	</target>
 </project>
