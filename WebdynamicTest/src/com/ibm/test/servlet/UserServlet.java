@@ -1,6 +1,8 @@
 package com.ibm.test.servlet;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -30,6 +32,15 @@ public class UserServlet extends HttpServlet {
 		String name=request.getParameter("user");
 		String password=request.getParameter("password");
 		System.out.println("name and password....."+name +"   ....."+password);
+		
+		response.setContentType("text/html");  
+	    PrintWriter out = response.getWriter();  
+	          
+	   // String n=request.getParameter("username"); 
+	    
+	    out.print("Welcome "+name);  
+	          
+		
 	}
 
 	/**
