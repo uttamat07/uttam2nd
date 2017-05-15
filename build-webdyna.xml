@@ -37,7 +37,6 @@
 		<echo message="Using Java version ${ant.java.version}." />
 		<echo message="Compiled class version 1.7." />
 		<javac destdir="${build.dir}" debug="true" srcdir="${src.dir}" source="1.7" target="1.7">
-			<classpath path="${web.dir}//WEB-INF/lib/**/*.jar" />
 			<!-- <classpath path="./lib/javax.servlet-api-3.0.1.jar"/> -->
 			<classpath refid="compile.classpath" />
 		</javac>
