@@ -2,7 +2,7 @@
 <project name="AntBuild" default="war" basedir=".">
 
 	<!-- set global properties for this build -->
-	<property name="project.dir" value="./GppReplacement"/>
+	<property name="project.dir" value="./WebdynamicTest"/>
 	<property name="src.dir" location="${project.dir}/src"/>
 	<property name="testSrc.dir"  location="${project.dir}/test"/>
 	<property name="build.dir" location="./build/classes"/>
@@ -70,7 +70,7 @@
 		</junitreport-->
 	</target>
 	<target name="war" depends="junit" description="create war file">
-		<war destfile="${dist.dir}/GppReplacement.war" webxml="${web.dir}/WEB-INF/web.xml">
+		<war destfile="${dist.dir}/WebdynamicTest.war" webxml="${web.dir}/WEB-INF/web.xml">
 			<fileset dir="${web.dir}">
 			<include name="**/*.*" />
 			</fileset>
