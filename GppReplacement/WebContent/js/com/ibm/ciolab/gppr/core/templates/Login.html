@@ -1,0 +1,45 @@
+<div>
+    <div class="ibm-columns">
+        <div class="ibm-col-5-4">
+            <div class="ibm-container">
+                <h2 data-dojo-attach-point="loginTitle" data-dojo-i18n="true"></h2>
+                <div class="ibm-container-body">
+                    <div data-dojo-attach-point="loginFailedText" data-dojo-i18n="true" style="display: none;color: red;font-size: 0.8em"></div>
+					<div data-dojo-attach-point="userNameLabel" data-dojo-i18n="true" style="padding: 0 0 3px 0"></div>
+					<div>
+					<input type="text" data-dojo-type="dijit.form.ValidationTextBox"
+						   data-dojo-attach-point="userNameInput" data-dojo-props="required:'true'"/>
+					<span data-dojo-attach-point="userNameSampleText" data-dojo-i18n="true" style="font-style: italic;"></span>
+					</div>
+					<div data-dojo-attach-point="passwordLabel" data-dojo-i18n="true" style="padding: 10px 0 3px 0"></div>
+					<div>
+					<input type="password" data-dojo-type="dijit.form.ValidationTextBox" 
+						   data-dojo-attach-point="userPassword" data-dojo-props="required:'true',type:'password'"/>
+					   
+					<a target="_blank" href="https://w3.ibm.com/profile/update/password/" data-dojo-attach-point="forgetPasswordText" data-dojo-i18n="true"></a>
+					</div>
+                    <hr class="ibm-horizontal-line">
+                    <div id="login-page-button-div">
+                        <div data-dojo-attach-point="buttonDiv">
+							<button data-dojo-type="com.ibm.ciolab.core.Button" data-dojo-attach-point="loginButton"
+									data-dojo-attach-event="onClick:login" 
+                                    data-dojo-props="style:'float: right; margin-left: 10px'">${i18n.loginButton}</button>
+						</div>
+                        <div style="clear:right"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+		<div class="ibm-col-5-1">
+			<div class="ibm-container">
+                <h2 data-dojo-attach-point="termUseTitle" data-dojo-i18n="true"></h2>
+                <div>
+					<p data-dojo-attach-point="termUseText" data-dojo-i18n="true"></p></div>
+                <div class="ibm-container-footer">
+                    <a class="ibm-footer-link" target="_blank" href="http://w3.ibm.com/w3/info_terms_of_use.html" 
+                       data-dojo-attach-point="termUseLink" data-dojo-i18n="true"></a>
+                </div>
+            </div>
+		</div>
+    </div>
+</div>

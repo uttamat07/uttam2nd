@@ -1,0 +1,27 @@
+pre[class*='language-'], pre code[class*='language-'] {
+  background-color: #f3f3f3;
+  color: #232323;
+  font-family: "Source Code Pro", Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace; }
+
+pre[class*='language-'] {
+  background-color: transparent;
+  background-image: none;
+  border-left: 0; }
+
+pre .token.comment, pre .token.block-comment, pre .token.prolog, pre .token.doctype, pre .token.cdata {
+  color: #757575 !important; }
+
+pre .token.punctuation {
+  color: #757575; }
+
+pre .token.property, pre .token.tag, pre .token.boolean, pre .token.number, pre .token.function-name, pre .token.constant, pre .token.symbol, pre .token.deleted {
+  color: #9e0606; }
+
+pre .token.selector, pre .token.attr-name, pre .token.string, pre .token.char, pre .token.function, pre .token.builtin, pre .token.inserted {
+  color: #088358; }
+
+pre .token.operator, pre .token.entity, pre .token.url, pre .token.variable {
+  color: #d6a202; }
+
+pre .token.atrule, pre .token.attr-value, pre .token.keyword, pre .token.class-name {
+  color: #0f6c8a; }

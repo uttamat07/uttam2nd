@@ -1,0 +1,221 @@
+
+<html>
+<head>
+ <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="theme/css/w3ds.css">
+<link rel="stylesheet" type="text/css" href="theme/css/w3ds-icons.css">
+<link rel="stylesheet" type="text/css" href="theme/css/w3ds-prism.css">
+<link rel="stylesheet" type="text/css" href="theme/css/w3ds-data-tables.css">
+<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/dojo/1.6/dojo/resources/dojo.css">
+<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/dojo/1.6.0/dijit/themes/tundra/tundra.css" media="screen" />
+<script src="http://ajax.googleapis.com/ajax/libs/dojo/1.6.0/dojo/dojo.xd.js" data-dojo-config="isDebug: true, parseOnLoad: true"></script>
+<script>dojo.require("dijit.form.DateTextBox");</script>
+<script src="js/w3ds.js"></script>
+<script src="js/ibm-w3.js"></script>
+<script src="//1.w3.s81c.com/common/js/dojo/1.6/w3.js" type="text/javascript">//</script>
+<script type="text/javascript">
+            var dojoConfig = {
+                //isDebug: true,
+                parseOnLoad: true
+            };
+            //Story 5255-start
+            var globalObj ={};
+            //Story 5255-End
+        </script>
+         <script type="text/javascript">
+	        //for local development
+            //dojo.registerModulePath("com","../../com"); // comment this line when use custom build
+            //for v17 build
+            dojo.registerModulePath("com","js/com"); // comment this line when use custom build
+            
+            dojo.require("com.ibm.ciolab.gppr.Incentive");
+            var main = {};
+            dojo.ready(function(){
+                main = new com.ibm.ciolab.gppr.Incentive({}, dojo.byId("container"));
+                main.initialize().then(function(){
+                    // a temp fix for make no template page show up when view form
+                    // when view form - show the body when view form loaded(include change the page style)
+                    // otherwise show the body after main widget initialized
+                 /*    var p = main._getPathFromHash(), path = p.join ? p.join("/") : p;
+                    if(path != "MyTasks/ViewForm" && path != "MyTasks/ViewHistory"){
+                        dojo.style(window.document.body, "display", "block");
+                    } */
+                });
+                
+                // load w3fix.css after page loaded to fix the issue 
+                // that w3.js load claro.css and overwrite the css in w3fix.css if we put it in header.
+                var link = document.createElement("link");
+                link.rel = "stylesheet";
+                link.type = "text/css";
+                link.href = "theme/css/w3ds.css";
+                document.getElementsByTagName("head")[0].appendChild(link);
+            });
+        </script>
+</head>
+<body>
+<div id="messageDiv" style="display:none"></div>
+  <form action="incentive" method="POST" target="_self">
+	<div class="ds-grid">
+	    <h3 class="ds-heading-2 ds-margin-bottom-2 ds-align-text-left">
+					Create Incentive
+		</h3>
+		<div class="ds-col-xs-12">
+			<div class="ds-col-lg-6">
+				<div class="ds-input-container ds-margin-bottom-1">
+					<label for="incentiveName" class="ds-label">INCENTIVE NAME:
+					<span class="ibm-required" style="padding-left: 3px">*</span></label>
+					<span>
+                        <input class="ds-input" data-dojo-type="dijit.form.TextBox" data-dojo-attach-point="incentiveName" 
+                               data-dojo-props="trim:true, style:'width: 440px', maxLength:'120'" id="incentiveName" name="incentiveName" />
+                    </span> 
+				</div>
+		   </div>
+		   <div class="ds-col-lg-5">
+				<div class="ds-input-container ds-margin-bottom-1">
+					<label for="status" class="ds-label">STATUS:</label>
+					<div class="ds-select" style="padding:0px;width:38%">
+                        <select class="ds-select" data-dojo-type="dijit.form.Select " data-dojo-attach-point="statusFilter"
+                            data-dojo-props="functionname: 'getStatus', optionname: 'status'" id="status" name="status" >
+                             <option value="Pending">Pending</option> 
+                             <option value="Active">Active</option> 
+                             <option value="Expired">Expired</option> 
+                         </select>
+                    </div>
+				</div>
+		   </div>
+		</div>
+		<div class="ds-col-xs-12">
+			<div class="ds-col-lg-6">
+				<div class="ds-input-container ds-margin-bottom-1">
+				    <label for="incentiveDescription" class="ds-input-label">DESCRIPTION:</label>
+				    <div>
+                        <textarea class="ds-input" data-dojo-type="dijit.form.SimpleTextarea" data-dojo-attach-point="incentiveDescription" id="incentiveDescription" name="incentiveDescription"></textarea>
+                    </div>
+				</div>
+		   </div>
+		   <div class="ds-col-lg-2">
+				<div class="ds-input-container ds-margin-bottom-1">
+				    <label for="startDate" class="ds-input-label">BEGIN DATE:
+				    <span class="ibm-required" style="padding-left: 3px">*</span></label>
+                        <input  class="ds-input tundra" type="text" 
+                               id="startDate" name="startDate"
+                               data-dojo-type="dijit.form.DateTextBox" />
+                    </body>
+				</div>
+			</div>
+		    <div class="ds-col-lg-2">
+				<div class="ds-input-container ds-margin-bottom-1">
+				    <label for="endDate" class="ds-input-label">END DATE:</label>
+				    <span>
+                        <input type="text" class="ds-input" data-dojo-attach-point="endDate"
+                               id="endDate" name="endDate"
+                               data-dojo-type="dijit.form.DateTextBox"
+                               data-dojo-props="promptMessage:'mm/dd/yyyy', style: 'width:200px;', 
+                               onChange: function(date) {var min=date;if(min){var endDate=dijit.byId('endTime'); endDate.dropDownDefaultValue=min;endDate.constraints.min = min;}}" />
+                    </span>
+				</div>
+		   </div>
+		 </div>
+		 <div class="ds-col-xs-12">
+			<div class="ds-col-lg-6">
+				<div class="ds-input-container ds-margin-bottom-1">
+					<label for="businessOwner" class="ds-label">BUSINESS OWNER:</label>
+					<span>
+                        <input class="ds-input" data-dojo-type="dijit.form.TextBox" data-dojo-attach-point="businessOwner" 
+                               data-dojo-props="trim:true, style:'width: 440px', maxLength:'120'" id="businessOwner" name="businessOwner"/>
+                    </span>
+				</div>
+		   </div>
+		   <div class="ds-col-lg-5">
+				<div class="ds-input-container ds-margin-bottom-1">
+					<label for="businessOwner" class="ds-label">OI EXPIRATION PERIOD(DAYS):</label>
+				       <input type="number" class="ds-input" data-dojo-attach-point="oiExpiration" name="oiExpiration" min="0" max="5" id="oiExpiration" name="oiExpiration">
+				</div>
+		   </div>
+		</div>
+		<div class="ds-col-xs-12">
+			<div class="ds-col-lg-6">
+				<div class="ds-input-container ds-margin-bottom-1">
+					<label for="solutions" class="ds-label">SOLUTIONS REQUIRED:</label>
+					<div class="ds-select" style="padding:0px;width:38%">
+                        <select class="ds-select" data-dojo-type="dijit.form.Select " data-dojo-attach-point="solutionsFilter"
+                            data-dojo-props="functionname: 'getSolutionsRequired', optionname: 'solutions'" id="solutions" name="solutions">
+                            <option value="None" default>None</option>   
+                          </select>
+                    </div>
+				</div>
+		   </div>
+		</div>
+		<div class="ds-col-xs-12">
+			<div class="ds-col-lg-6">
+				<div class="ds-input-container ds-margin-bottom-1">
+					<label for="membershipType" class="ds-label">MEMBERSHIP TYPE :</label>
+					<div class="ds-select" style="padding:0px;width:38%">
+                        <select class="ds-select" data-dojo-type="dijit.form.Select " data-dojo-attach-point="membershipFilter"
+                            data-dojo-props="functionname: 'getMembershipType', optionname: 'membershipType'" id="membershipType" name="membershipType">
+                            <option value="Public">Public</option>
+                            <option value="Private">Private</option>
+                         	<option value="Country">country</option>   
+                         </select>
+                    </div>
+				</div>
+		   </div>
+		</div>
+		<div class="ds-col-xs-12">
+			<div class="ds-col-lg-6">
+				<div class="ds-input-container ds-margin-bottom-1">
+					<label for="submissionEmail" class="ds-label">SUBMISSION CONFIRMATION EMAIL:</label>
+					<div class="ds-select" style="padding:0px;width:100%">
+                        <select class="ds-select" data-dojo-type="dijit.form.Select " data-dojo-attach-point="submissionEmailFilter"
+                            data-dojo-props="functionname: 'getSubmissionEmail', optionname: 'submissionEmail'" id="submissionEmail" name="submissionEmail">
+                             <option value="None" default>None</option>   
+                        </select>
+                    </div>
+				</div>
+		   </div>
+		   <div class="ds-col-lg-5">
+				<div class="ds-input-container ds-margin-bottom-1">
+					<label for="reminderEmail" class="ds-label">EXPIRATION REMINDER EMAIL:</label>
+					<div class="ds-select" style="padding:0px;width:100%">
+                        <select class="ds-select" data-dojo-type="dijit.form.Select " data-dojo-attach-point="reminderEmailFilter"
+                            data-dojo-props="functionname: 'getReminderEmail', optionname: 'reminderEmail'" id="reminderEmail" name="reminderEmail">
+                             <option value="None" default>None</option>   
+                        </select>
+                    </div>
+				</div>
+		  </div>
+		</div>
+		<div class="ds-col-xs-12">
+		  <div class="ds-col-lg-6">
+				<div class="ds-input-container ds-margin-bottom-1">
+					<label for="expirationEmail" class="ds-label">EXPIRATION CONFIRMATION EMAIL:</label>
+					<div class="ds-select" style="padding:0px;width:100%">
+                        <select class="ds-select" data-dojo-type="dijit.form.Select " data-dojo-attach-point="expirationEmailFilter"
+                            data-dojo-props="functionname: 'getExpirationEmail', optionname: 'expirationEmail'" id="expirationEmail" name="expirationEmail" >
+                             <option value="None" default>None</option>   
+                        </select>
+                    </div>
+				</div>
+		   </div>
+		   <div class="ds-col-lg-5">
+				<div class="ds-input-container ds-margin-bottom-1">
+					<label for="priorExpiration" class="ds-label">DAYS PRIOR TO EXPIRATION SEND REMINDER EMAIL:</label>
+					  <input type="number" class="ds-input ds-disabled"  data-dojo-attach-point="priorExpiration" name="priorExpiration" id="priorExpiration" min="0" max="5" style="padding:0px;width:38%" disabled placeholder="00000">
+				</div>
+		   </div>
+		</div>
+		<div class="ds-col-xs-12 ds-offset-lg-7">
+		  <div class="ds-col-lg-2">
+		        <button class="ds-button ds-secondary ds-no-expand ds-margin-bottom-0" data-dojo-type="com.ibm.ciolab.core.Button" data-dojo-attach-point="cancelButton"
+                    data-dojo-attach-event="onClick:cancel"
+                    data-dojo-props="style:'width:90%">Cancel</button>
+		    </div>
+		     <div class="ds-col-lg-3">
+		     <button class="ds-button ds-primary ds-no-expand ds-margin-bottom-0" style="width:61%" type="submit" value="Submit">Create Incentive</button>
+		    </div>
+          </div>
+	</form>
+ </body>
+</html>
+ 
